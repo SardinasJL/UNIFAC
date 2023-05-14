@@ -1,0 +1,236 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="unifac.css" type="text/css" rel="stylesheet">
+<script src="unifac.js" type="text/javascript"></script>
+<noscript>Por favor active javascript</noscript>
+<title>Documento sin título</title>
+</head>
+<body>
+<div id="divagrupar">
+<header><h1>MÉTODO UNIFAC</h1></header>
+<div id="divinstrucciones">Ingrese las fracciones molares de los compuestos y la temperatura del sistema (en Kelvin).
+<div id="divncompuestos">Número de compuestos: <select id="sltncompuestos"><option value="2">2</option><option value="3">3</option></select></div>
+</div>
+
+<section>
+<form method="post" name="formulario" autocomplete="on">
+<div id="diventrada">
+<div id="divx1">x<sub>1</sub>: <input type="text" id="txtx1" onKeyPress="return permite(event, 'num')"></div>
+<div id="divx2">x<sub>2</sub>: <input type="text" id="txtx2" onKeyPress="return permite(event, 'num')"></div>
+<div id="divx3"></div>
+<div id="divt">T(K): <input type="text" id="txtt" onKeyPress="return permite(event, 'num')"></div>
+ <input type="button" value="CALCULAR" id="btncalcular">  <input type="reset" value="RESET" id="btnreset">
+<div id="divresultado"></div>
+</div>
+
+<div id="divcompuesto1">
+<center>
+		Compuesto 1
+		<table>
+		<tr>
+				<td align="center">Grupo Principal</td>
+				<td align="center">Subgrupo</td>
+				<td align="center">vk</td>
+		</tr>
+		<tr>
+				<td rowspan="4">1 "CH<sub>2</sub>"</td>
+				<td>CH<sub>3</sub></td>
+				<td><input type="text" id="txtc1s1" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub></td>
+				<td><input type="text" id="txtc1s2" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH</td>
+				<td><input type="text" id="txtc1s3" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>C</td>
+				<td><input type="text" id="txtc1s4" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan=""><p>3 &quot;ACH&quot;</p>
+						<p>(AC = carbono aromático)</p></td>
+				<td>ACH</td>
+				<td><input type="text" id="txtc1s5" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">4 &quot;ACCH<sub>2</sub>&quot;</td>
+				<td>ACCH<sub>3</sub></td>
+				<td><input type="text" id="txtc1s6" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>ACCH<sub>2</sub></td>
+				<td><input type="text" id="txtc1s7" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>5 &quot;OH&quot;</td>
+				<td>OH</td>
+				<td><input type="text" id="txtc1s8" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>7 &quot;H<sub>2</sub>O&quot;</td>
+				<td>H<sub>2</sub>O</td>
+				<td><input type="text" id="txtc1s9" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">9 &quot;CH<sub>2</sub>CO&quot;</td>
+				<td>CH<sub>3</sub>CO</td>
+				<td><input type="text" id="txtc1s10" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>CO</td>
+				<td><input type="text" id="txtc1s11" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="3">13 &quot;CH<sub>2</sub>O&quot;</td>
+				<td>CH<sub>3</sub>O</td>
+				<td><input type="text" id="txtc1s12" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>O</td>
+				<td><input type="text" id="txtc1s13" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH-O</td>
+				<td><input type="text" id="txtc1s14" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="3">15 &quot;CNH&quot;</td>
+				<td>CH<sub>3</sub>NH</td>
+				<td><input type="text" id="txtc1s15" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>NH</td>
+				<td><input type="text" id="txtc1s16" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CHNH</td>
+				<td><input type="text" id="txtc1s17" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">19 &quot;CCN&quot;</td>
+				<td>CH<sub>3</sub>CN</td>
+				<td><input type="text" id="txtc1s18" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>CN</td>
+				<td><input type="text" id="txtc1s19" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+</table>
+
+
+</center>
+</div>
+<div id="divcompuesto2">
+<center>Compuesto 2
+<table>
+		<tr>
+				<td align="center">Grupo Principal</td>
+				<td align="center">Subgrupo</td>
+				<td align="center">vk</td>
+		</tr>
+		<tr>
+				<td rowspan="4">1 "CH<sub>2</sub>"</td>
+				<td>CH<sub>3</sub></td>
+				<td><input type="text" id="txtc2s1" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub></td>
+				<td><input type="text" id="txtc2s2" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH</td>
+				<td><input type="text" id="txtc2s3" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>C</td>
+				<td><input type="text" id="txtc2s4" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan=""><p>3 &quot;ACH&quot;</p>
+						<p>(AC = carbono aromático)</p></td>
+				<td>ACH</td>
+				<td><input type="text" id="txtc2s5" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">4 &quot;ACCH<sub>2</sub>&quot;</td>
+				<td>ACCH<sub>3</sub></td>
+				<td><input type="text" id="txtc2s6" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>ACCH<sub>2</sub></td>
+				<td><input type="text" id="txtc2s7" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>5 &quot;OH&quot;</td>
+				<td>OH</td>
+				<td><input type="text" id="txtc2s8" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>7 &quot;H<sub>2</sub>O&quot;</td>
+				<td>H<sub>2</sub>O</td>
+				<td><input type="text" id="txtc2s9" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">9 &quot;CH<sub>2</sub>CO&quot;</td>
+				<td>CH<sub>3</sub>CO</td>
+				<td><input type="text" id="txtc2s10" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>CO</td>
+				<td><input type="text" id="txtc2s11" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="3">13 &quot;CH<sub>2</sub>O&quot;</td>
+				<td>CH<sub>3</sub>O</td>
+				<td><input type="text" id="txtc2s12" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>O</td>
+				<td><input type="text" id="txtc2s13" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH-O</td>
+				<td><input type="text" id="txtc2s14" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="3">15 &quot;CNH&quot;</td>
+				<td>CH<sub>3</sub>NH</td>
+				<td><input type="text" id="txtc2s15" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>NH</td>
+				<td><input type="text" id="txtc2s16" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CHNH</td>
+				<td><input type="text" id="txtc2s17" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td rowspan="2">19 &quot;CCN&quot;</td>
+				<td>CH<sub>3</sub>CN</td>
+				<td><input type="text" id="txtc2s18" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+		<tr>
+				<td>CH<sub>2</sub>CN</td>
+				<td><input type="text" id="txtc2s19" onKeyPress="return permite(event, 'num')"></td>
+		</tr>
+</table>
+
+
+</center>
+</div>
+<div id="divcompuesto3"></div>
+
+</form>
+</section>
+<footer>Creado por José Luis. Ningún derecho reservado. Este software puede distribuirse, modificarse, etc.</footer>
+
+
+</div>
+</body>
+</html>

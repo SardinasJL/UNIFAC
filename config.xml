@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<widget id="com.example.hello" version="0.0.1">
+		<name>UNIFAC</name>
+		<description>
+            Esta app sirve para calcular los coeficientes de actividad usando el método UNIFAC.
+		</description>
+		<author email="sardinasjoseluis1@gmail.com" href="http://www.joseluis.com">
+            Jose Luis Sardinas
+		</author>
+		<content src="index.html" />
+		<access origin="*" />
+		<icon src="icono.png" />
+</widget>
